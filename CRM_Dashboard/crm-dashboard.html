@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ProteinX CRM</title>
+<style>
+:root{--bg:#eff1f5;--cd:#fff;--tx:#14161d;--mu:#667085;--ln:#dfe3ea;--sf:#e8ebf1;--ac:#b0245a;--on:#fff;--ok:#1b8a58;--wn:#b36b00;--bd:#c53030;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#101216;--cd:#1a1d24;--tx:#eef0f4;--mu:#9aa1b0;--ln:#2b303b;--sf:#242934;--ac:#ff7aa8;--on:#1a0a12;--ok:#4cc48f;--wn:#f0b030;--bd:#f26b6b;color-scheme:dark}}
+:root[data-theme=dark]{--bg:#101216;--cd:#1a1d24;--tx:#eef0f4;--mu:#9aa1b0;--ln:#2b303b;--sf:#242934;--ac:#ff7aa8;--on:#1a0a12;--ok:#4cc48f;--wn:#f0b030;--bd:#f26b6b;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:inherit}
+body{margin:0;background:var(--bg);color:var(--tx);font:14px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",sans-serif}
+main{max-width:1180px;margin:0 auto;padding:18px 14px 40px}
+h1{font-size:24px;letter-spacing:-.02em;margin:0}
+h2{font-size:15px;margin:0 0 10px}h3{margin:0}
+.mu{color:var(--mu);font-size:12px}
+.sec{margin-top:24px}
+.card{background:var(--cd);border:1px solid var(--ln);border-radius:10px;padding:14px}
+.kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:14px}
+.kpi b{display:block;font-size:26px;letter-spacing:-.02em;margin:2px 0}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:10px;align-items:start}
+.hd{display:flex;justify-content:space-between;align-items:center;gap:8px;margin-bottom:10px}.hd h2{margin:0}
+.btn{background:var(--ac);color:var(--on);border:0;border-radius:8px;padding:8px 14px;font:inherit;font-weight:600;cursor:pointer;text-decoration:none;display:inline-block}
+.btn.o{background:none;color:var(--tx);border:1px solid var(--ln)}
+.btn:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--ac);outline-offset:2px}
+.tw{overflow-x:auto}
+table{width:100%;border-collapse:collapse;min-width:760px}
+th,td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--ln);white-space:nowrap}
+th{font-size:12px;color:var(--mu);font-weight:600}
+.Active{color:var(--ok)}.At-Risk{color:var(--wn)}.Lost{color:var(--bd)}.New-Lead{color:var(--ac)}
+.st{font-weight:600}
+.row{display:flex;align-items:center;gap:8px;margin:8px 0}
+.row>span:first-child{width:84px;flex:none}
+.v{width:92px;flex:none;text-align:right;font-size:12px}
+.trk{flex:1;height:14px;background:var(--sf);border-radius:7px;overflow:hidden}
+.trk i{display:block;height:100%;background:var(--ac)}
+.trk i.t{background:color-mix(in srgb,var(--ac) 28%,transparent)}
+.trk u{display:block;height:100%;background:var(--ac)}
+.cols{display:flex;align-items:flex-end;gap:8px;height:170px}
+.col{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;font-size:11px;gap:3px}
+.col div{width:100%;max-width:44px;background:var(--ac);border-radius:5px 5px 0 0;min-height:2px}
+.board{display:grid;grid-template-columns:repeat(5,minmax(200px,1fr));gap:10px;overflow-x:auto;padding-bottom:4px}
+.lane{background:var(--sf);border-radius:10px;padding:8px;min-height:110px}
+.lane h3{font-size:13px;margin:2px 4px 8px;display:flex;justify-content:space-between}
+.deal{background:var(--cd);border:1px solid var(--ln);border-radius:8px;padding:9px;margin-bottom:8px}
+.deal select{width:100%;margin-top:7px}
+.li{display:flex;justify-content:space-between;gap:8px;padding:7px 0;border-bottom:1px solid var(--ln)}
+.fu{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--ln)}
+.fu input{width:200px}
+select,input{font:inherit;color:var(--tx);background:var(--cd);border:1px solid var(--ln);border-radius:6px;padding:6px 8px;max-width:100%}
+dialog{border:1px solid var(--ln);border-radius:12px;background:var(--cd);color:var(--tx);padding:18px;width:min(420px,92vw)}
+dialog::backdrop{background:#0008}
+dialog input,dialog select{width:100%}
+label{display:block;margin:10px 0 3px;font-size:12px;color:var(--mu)}
+</style></head><body><main>
+<h1>ProteinX CRM</h1><div class="mu" id="dt"></div>
+<div class="kpis" id="kpis"></div>
+
+<section class="sec"><div class="card">
+<div class="hd"><h2>Leads</h2><button class="btn" onclick="$('#dlg').showModal()">+ Add Lead</button></div>
+<div class="tw"><table><thead><tr><th>Name</th><th>Category</th><th>Platform</th><th>Top product</th><th>Status</th><th>Revenue</th><th>Next follow-up</th><th>Deal stage</th></tr></thead><tbody id="lt"></tbody></table></div>
+</div></section>
+
+<section class="sec"><div class="g3">
+<div class="card"><h2>Leads and conversion by platform</h2><div id="cp"></div><div class="mu">Light bar = leads, dark = converted to customers</div></div>
+<div class="card"><h2>Monthly revenue</h2><div class="cols" id="cm"></div><div class="mu">Grouped by month of last order</div></div>
+<div class="card"><h2>Top-selling products</h2><div id="cr"></div><div class="mu">Ranked by revenue</div></div>
+</div></section>
+
+<section class="sec"><h2>Bulk deals pipeline</h2><div class="board" id="pb"></div></section>
+<section class="sec"><h2>Customers</h2><div class="g3" id="cl"></div></section>
+<section class="sec"><div class="card"><h2>Today’s follow-ups</h2><div id="fu"></div></div></section>
+
+<dialog id="dlg"><h2>Add lead</h2>
+<label>Name</label><input id="fn" placeholder="Lead or business name">
+<label>Category</label><select id="fc"></select>
+<label>Acquisition platform</label><select id="fp"></select>
+<label>Top product</label><select id="fd"></select>
+<label>WhatsApp number, with country code</label><input id="fh" placeholder="919876543210">
+<label>Next follow-up date</label><input id="ff" type="date">
+<label>Deal stage, for gyms, retailers and distributors</label><select id="fs"></select>
+<div style="margin-top:16px;display:flex;gap:8px;justify-content:flex-end"><button class="btn o" onclick="$('#dlg').close()">Cancel</button><button class="btn" onclick="add()">Save lead</button></div>
+</dialog>
+</main>
+<script>
+const CSV=`ID,Lead/Customer Name,Category,Status,Acquisition Platform,Top Product,Total Revenue ($),Last Order Date,Next Follow-up Date,Deal Stage
+1,Aarav Singh,Individual,Active,Instagram,ProteinX Loaded,120,2026-11-05,,
+2,Waves Gym,Gym,New Lead,Direct,ProteinX Bulk Powder,0,,2026-11-11,Negotiation
+3,Priya Sharma,Individual,At Risk,Facebook,ProteinX Vegan Bar,45,2026-09-20,,
+4,FitLife Retailers,Retailer,Active,LinkedIn,ProteinX Loaded,1500,2026-10-25,,Closed Won
+5,Rohan Desai,Individual,Lost,Instagram,ProteinX Lite,30,2026-06-15,,
+6,Metro Distributors,Distributor,New Lead,Website,ProteinX Energy RTD,0,,2026-11-11,Proposal Sent
+7,Kavita Iyer,Individual,Active,Website,ProteinX Loaded,90,2026-11-02,,
+8,Iron Core Gym,Gym,At Risk,Direct,ProteinX Bulk Powder,800,2026-09-10,2026-11-11,Follow-up
+9,Neha Gupta,Individual,New Lead,Facebook,ProteinX Vegan Bar,0,,2026-11-12,New
+10,Vikram Malhotra,Individual,Active,Instagram,ProteinX Loaded,60,2026-11-08,,`;
+const $=s=>document.querySelector(s),T=new Date().toLocaleDateString('en-CA'),
+D=d=>Math.round((Date.parse(T)-Date.parse(d))/864e5),
+M=n=>'$'+n.toLocaleString('en-US'),
+E=s=>String(s).replace(/[&<>"']/g,c=>'&#'+c.charCodeAt(0)+';'),
+seg=r=>!r.last?'New Lead':D(r.last)<=30?'Active':D(r.last)<=75?'At Risk':'Lost',
+cls=s=>s.replace(' ','-'),
+by=(a,f)=>a.reduce((m,x)=>((m[f(x)]??=[]).push(x),m),{}),
+BULK=['Gym','Retailer','Distributor'],ST=['New','Proposal Sent','Negotiation','Follow-up','Closed Won'],
+PL=['Instagram','Facebook','LinkedIn','Direct','Website'],
+PD=['Loaded','Bulk Powder','Vegan Bar','Lite','Energy RTD'].map(x=>'ProteinX '+x),
+R={Active:'0–30 days','At Risk':'31–75 days',Lost:'76+ days'},K='proteinx-crm-v1',
+opts=a=>a.map(x=>`<option>${x}</option>`).join('');
+let L;try{L=JSON.parse(localStorage.getItem(K))}catch(e){}
+if(!Array.isArray(L))L=CSV.trim().split('\n').slice(1).map(l=>{const c=l.split(',');return{id:+c[0],name:c[1],cat:c[2],plat:c[4],prod:c[5],rev:+c[6],last:c[7],next:c[8],stage:c[9],phone:''}});
+const save=()=>{try{localStorage.setItem(K,JSON.stringify(L))}catch(e){}};
+$('#fc').innerHTML=opts(['Individual',...BULK]);$('#fp').innerHTML=opts(PL);$('#fd').innerHTML=opts(PD);$('#fs').innerHTML=opts(ST);
+$('#dt').textContent=new Date().toLocaleDateString(undefined,{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+
+function mv(id,v){L.find(r=>r.id==id).stage=v;save();render()}
+function ph(id,v){L.find(r=>r.id==id).phone=v;save();render()}
+function add(){
+ const n=$('#fn').value.trim();if(!n){$('#fn').focus();return}
+ const c=$('#fc').value;
+ L.unshift({id:Math.max(0,...L.map(r=>r.id))+1,name:n,cat:c,plat:$('#fp').value,prod:$('#fd').value,rev:0,last:'',next:$('#ff').value,stage:BULK.includes(c)?$('#fs').value:'',phone:$('#fh').value});
+ save();render();$('#dlg').close();$('#fn').value=$('#fh').value=$('#ff').value='';
+}
+
+function render(){
+ const cu=L.filter(r=>r.last),nl=L.filter(r=>!r.last),fu=L.filter(r=>r.next===T),
+ rev=L.reduce((s,r)=>s+r.rev,0),act=cu.filter(r=>seg(r)=='Active').length;
+ $('#kpis').innerHTML=[['Revenue',M(rev),'from all customers'],['Orders',cu.length,'1 per ordering customer'],['Customers',cu.length,act+' active'],['New leads',nl.length,'no order yet'],['Lead conversion',Math.round(cu.length/L.length*100)+'%',cu.length+' of '+L.length+' contacts'],['Follow-ups due today',fu.length,'for '+T]]
+  .map(k=>`<div class="card kpi"><span class="mu">${k[0]}</span><b>${k[1]}</b><span class="mu">${k[2]}</span></div>`).join('');
+
+ $('#lt').innerHTML=L.map(r=>`<tr><td>${E(r.name)}</td><td>${r.cat}</td><td>${r.plat}</td><td>${E(r.prod)}</td><td class="st ${cls(seg(r))}">${seg(r)}</td><td>${M(r.rev)}</td><td>${r.next||'–'}</td><td>${r.stage||'–'}</td></tr>`).join('');
+
+ const P=by(L,r=>r.plat),pk=Object.keys(P).sort((a,b)=>P[b].length-P[a].length),mx=P[pk[0]].length;
+ $('#cp').innerHTML=pk.map(p=>{const n=P[p].length,c=P[p].filter(r=>r.last).length;return `<div class="row"><span>${p}</span><div class="trk"><i class="t" style="width:${n/mx*100}%"><u style="width:${c/n*100}%"></u></i></div><span class="v">${n} lead${n>1?'s':''}, ${Math.round(c/n*100)}%</span></div>`}).join('');
+
+ const mr={};cu.forEach(r=>{const k=r.last.slice(0,7);mr[k]=(mr[k]||0)+r.rev});
+ const ks=Object.keys(mr).sort(),ms=[];let [y,m]=ks[0].split('-').map(Number);const [ey,em]=ks.at(-1).split('-').map(Number);
+ for(;y<ey||(y==ey&&m<=em);m>11?(y++,m=1):m++)ms.push(y+'-'+String(m).padStart(2,'0'));
+ const mm=Math.max(...ms.map(k=>mr[k]||0),1);
+ $('#cm').innerHTML=ms.map(k=>{const v=mr[k]||0;return `<div class="col"><span>${v?M(v):''}</span><div style="height:${v/mm*72}%"></div><span class="mu">${new Date(k+'-01T00:00').toLocaleString('en',{month:'short'})}</span></div>`}).join('');
+
+ const PR=by(L,r=>r.prod),pr=Object.keys(PR).map(p=>[p,PR[p].reduce((s,r)=>s+r.rev,0)]).sort((a,b)=>b[1]-a[1]),pm=Math.max(pr[0][1],1);
+ $('#cr').innerHTML=pr.map(p=>`<div class="row"><span style="width:104px">${E(p[0].replace('ProteinX ',''))}</span><div class="trk"><i style="width:${p[1]/pm*100}%"></i></div><span class="v" style="width:56px">${M(p[1])}</span></div>`).join('');
+
+ $('#pb').innerHTML=ST.map(s=>{const d=L.filter(r=>BULK.includes(r.cat)&&(r.stage||'New')==s);
+  return `<div class="lane"><h3><span>${s}</span><span class="mu">${d.length}</span></h3>${d.map(r=>`<div class="deal"><b>${E(r.name)}</b><div class="mu">${r.cat}, ${E(r.prod.replace('ProteinX ',''))}${r.rev?', '+M(r.rev):''}</div><select aria-label="Deal stage" onchange="mv(${r.id},this.value)">${ST.map(x=>`<option${x==s?' selected':''}>${x}</option>`).join('')}</select></div>`).join('')}</div>`}).join('');
+
+ $('#cl').innerHTML=['Active','At Risk','Lost'].map(s=>{const d=cu.filter(r=>seg(r)==s).sort((a,b)=>D(a.last)-D(b.last));
+  return `<div class="card"><h2 class="${cls(s)}">${s}</h2><div class="mu">${d.length} customer${d.length==1?'':'s'}, ${R[s]} since last order</div>${d.map(r=>`<div class="li"><span>${E(r.name)}</span><span class="mu">${D(r.last)} days ago, ${M(r.rev)}</span></div>`).join('')||'<p class="mu">None right now</p>'}</div>`}).join('');
+
+ $('#fu').innerHTML=fu.map(r=>{const p=(r.phone||'').replace(/\D/g,''),t=encodeURIComponent(`Hi ${r.name.split(' ')[0]}, this is ProteinX. Following up on ${r.prod}. Is now a good time to chat?`);
+  return `<div class="fu"><div style="flex:1;min-width:170px"><b>${E(r.name)}</b><div class="mu">${r.cat}, ${E(r.prod)}${r.stage?', '+r.stage:''}</div></div><input placeholder="WhatsApp number, e.g. 919876543210" aria-label="WhatsApp number" value="${E(r.phone||'')}" onchange="ph(${r.id},this.value)"><a class="btn" target="_blank" rel="noopener" href="https://wa.me/${p}?text=${t}">Message on WhatsApp</a></div>`}).join('')||'<p class="mu">No follow-ups due today.</p>';
+}
+render();
+</script></body></html>
