@@ -1,0 +1,208 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --bg-base: #0A0D14;
+    --surface-low: #101522;
+    --surface-mid: #161D2E;
+    --surface-high: #1E2638;
+    --primary-cyan: #00F0FF;
+    --secondary-violet: #7B61FF;
+    --tertiary-mint: #10E896;
+    --status-error: #FF453A;
+    --border-hairline: rgba(255, 255, 255, 0.08);
+  }
+
+  body {
+    background-color: #0A0D14;
+    color: #e1e2ec;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+
+  code, pre, .font-mono, .telemetry-mono {
+    font-family: 'JetBrains Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom Tactical Glassmorphism & Micro-separators */
+.glass-panel {
+  background: rgba(22, 29, 46, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-panel-elevated {
+  background: rgba(30, 38, 56, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08);
+}
+
+.hairline-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hairline-top {
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hairline-bottom {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.hairline-gradient-card {
+  background: #161D2E;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  position: relative;
+}
+
+.hairline-gradient-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(0, 240, 255, 0.4), transparent);
+  pointer-events: none;
+}
+
+.hairline-gradient-card:hover {
+  border-color: rgba(0, 240, 255, 0.35);
+  box-shadow: 0 0 24px -6px rgba(0, 240, 255, 0.15);
+}
+
+/* Primary Execution Button */
+.btn-primary-exec {
+  background-color: #00F0FF;
+  color: #0A0D14;
+  font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  letter-spacing: 0.01em;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+}
+
+.btn-primary-exec:hover:not(:disabled) {
+  background-color: #33f4ff;
+  box-shadow: 0 0 20px rgba(0, 240, 255, 0.55);
+  transform: translateY(-1px);
+}
+
+.btn-primary-exec:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+/* Secondary Glass Button */
+.btn-secondary-glass {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  color: #FFFFFF;
+  transition: all 0.2s ease;
+}
+
+.btn-secondary-glass:hover:not(:disabled) {
+  background: rgba(123, 97, 255, 0.15);
+  border-color: rgba(123, 97, 255, 0.6);
+  color: #e5deff;
+  box-shadow: 0 0 16px rgba(123, 97, 255, 0.25);
+}
+
+/* Destructive Halt Button */
+.btn-destructive-halt {
+  background: rgba(255, 69, 58, 0.12);
+  border: 1px solid rgba(255, 69, 58, 0.3);
+  color: #FF453A;
+  transition: all 0.2s ease;
+}
+
+.btn-destructive-halt:hover:not(:disabled) {
+  background: rgba(255, 69, 58, 0.22);
+  border-color: rgba(255, 69, 58, 0.55);
+  box-shadow: 0 0 16px rgba(255, 69, 58, 0.3);
+}
+
+/* Input Fields */
+.input-obsidian {
+  background-color: #101522;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #FFFFFF;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.15s ease;
+}
+
+.input-obsidian::placeholder {
+  color: #4E5971;
+}
+
+.input-obsidian:focus {
+  outline: none;
+  border-color: #00F0FF;
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.3), 0 0 12px rgba(0, 240, 255, 0.15);
+}
+
+/* Table Row Highlights */
+.table-row-hover {
+  position: relative;
+  transition: background-color 0.12s ease;
+}
+
+.table-row-hover:hover {
+  background-color: rgba(123, 97, 255, 0.05);
+}
+
+.table-row-hover:hover::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background-color: #7B61FF;
+}
+
+/* Pulse animation for active node LEDs */
+@keyframes pulse-led {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 8px #10E896;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.85);
+    box-shadow: 0 0 3px #10E896;
+  }
+}
+
+.animate-pulse-led {
+  animation: pulse-led 2s infinite ease-in-out;
+}
+
+/* Custom minimalist scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A0D14;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 240, 255, 0.35);
+}

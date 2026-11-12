@@ -1,0 +1,262 @@
+---
+name: Obsidian Kinetic
+colors:
+  surface: '#10131a'
+  surface-dim: '#10131a'
+  surface-bright: '#363941'
+  surface-container-lowest: '#0b0e15'
+  surface-container-low: '#191b23'
+  surface-container: '#1d1f27'
+  surface-container-high: '#272a32'
+  surface-container-highest: '#32353d'
+  on-surface: '#e1e2ec'
+  on-surface-variant: '#b9cacb'
+  inverse-surface: '#e1e2ec'
+  inverse-on-surface: '#2d3038'
+  outline: '#849495'
+  outline-variant: '#3b494b'
+  surface-tint: '#00dbe9'
+  primary: '#dbfcff'
+  on-primary: '#00363a'
+  primary-container: '#00f0ff'
+  on-primary-container: '#006970'
+  inverse-primary: '#006970'
+  secondary: '#c9bfff'
+  on-secondary: '#2e009c'
+  secondary-container: '#4720ca'
+  on-secondary-container: '#baaeff'
+  tertiary: '#d7ffe3'
+  on-tertiary: '#003921'
+  tertiary-container: '#33f6a2'
+  on-tertiary-container: '#006d43'
+  error: '#ffb4ab'
+  on-error: '#690005'
+  error-container: '#93000a'
+  on-error-container: '#ffdad6'
+  primary-fixed: '#7df4ff'
+  primary-fixed-dim: '#00dbe9'
+  on-primary-fixed: '#002022'
+  on-primary-fixed-variant: '#004f54'
+  secondary-fixed: '#e5deff'
+  secondary-fixed-dim: '#c9bfff'
+  on-secondary-fixed: '#1a0063'
+  on-secondary-fixed-variant: '#441cc8'
+  tertiary-fixed: '#51ffad'
+  tertiary-fixed-dim: '#00e292'
+  on-tertiary-fixed: '#002111'
+  on-tertiary-fixed-variant: '#005232'
+  background: '#10131a'
+  on-background: '#e1e2ec'
+  surface-variant: '#32353d'
+typography:
+  display-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 56px
+    fontWeight: '700'
+    lineHeight: 64px
+    letterSpacing: -0.03em
+  display-lg-mobile:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 36px
+    fontWeight: '700'
+    lineHeight: 44px
+    letterSpacing: -0.02em
+  display-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 40px
+    fontWeight: '600'
+    lineHeight: 48px
+    letterSpacing: -0.025em
+  display-md-mobile:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 28px
+    fontWeight: '600'
+    lineHeight: 36px
+    letterSpacing: -0.02em
+  headline-xl:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 32px
+    fontWeight: '600'
+    lineHeight: 40px
+    letterSpacing: -0.02em
+  headline-xl-mobile:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.015em
+  headline-lg:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 24px
+    fontWeight: '600'
+    lineHeight: 32px
+    letterSpacing: -0.015em
+  headline-md:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 20px
+    fontWeight: '600'
+    lineHeight: 28px
+    letterSpacing: -0.01em
+  headline-sm:
+    fontFamily: Plus Jakarta Sans
+    fontSize: 16px
+    fontWeight: '600'
+    lineHeight: 24px
+    letterSpacing: 0em
+  body-lg:
+    fontFamily: Inter
+    fontSize: 16px
+    fontWeight: '400'
+    lineHeight: 26px
+    letterSpacing: -0.01em
+  body-md:
+    fontFamily: Inter
+    fontSize: 14px
+    fontWeight: '400'
+    lineHeight: 22px
+    letterSpacing: -0.005em
+  body-sm:
+    fontFamily: Inter
+    fontSize: 12px
+    fontWeight: '400'
+    lineHeight: 18px
+    letterSpacing: 0em
+  label-lg:
+    fontFamily: JetBrains Mono
+    fontSize: 13px
+    fontWeight: '500'
+    lineHeight: 18px
+    letterSpacing: 0.02em
+  label-md:
+    fontFamily: JetBrains Mono
+    fontSize: 11px
+    fontWeight: '500'
+    lineHeight: 16px
+    letterSpacing: 0.04em
+  label-sm:
+    fontFamily: JetBrains Mono
+    fontSize: 10px
+    fontWeight: '600'
+    lineHeight: 14px
+    letterSpacing: 0.06em
+rounded:
+  sm: 0.125rem
+  DEFAULT: 0.25rem
+  md: 0.375rem
+  lg: 0.5rem
+  xl: 0.75rem
+  full: 9999px
+spacing:
+  gutter: 1.25rem
+  gutter-sm: 0.75rem
+  gutter-lg: 1.75rem
+  margin: 2rem
+  margin-sm: 1rem
+  margin-lg: 3rem
+  space-xs: 0.25rem
+  space-sm: 0.5rem
+  space-md: 1rem
+  space-lg: 1.5rem
+  space-xl: 2.5rem
+---
+
+## Brand & Style
+
+This design system delivers a futuristic, high-computational aesthetic tailored for high-stakes enterprise AI orchestration and algorithmic asset trading. The target audience includes ML engineers, autonomous agent architects, and enterprise procurement directors who demand high information density paired with pristine visual clarity.
+
+The visual direction blends **Tactile Glassmorphism** with **Technical Precision Minimalism**:
+- **Atmosphere:** Deep, non-reflective obsidian and midnight slate substrates evoke advanced server environments and deep compute clusters.
+- **Accents:** Electric neon cyan, refined ultraviolet, and algorithmic hyper-violets indicate cognitive state, processing power, and real-time execution flows.
+- **Tactile Quality:** Polished structural surfaces, hairline glass borders (1px with sub-surface luminance), and micro-gradients that respond dynamically to agent status and computational output.
+- **Emotion:** Absolute reliability, computational velocity, enterprise authority, and state-of-the-art technical superiority.
+
+## Colors
+
+The color palette centers on a multi-tiered midnight obsidian foundation punctuated by hyper-focused spectral signals:
+
+- **Surface Foundations:**
+  - `Base Canvas`: `#0A0D14` (Deep void obsidian)
+  - `Surface Low (Containers / Sidebars)`: `#101522` (Midnight slate)
+  - `Surface Mid (Cards / Interactive Panels)`: `#161D2E` (Structured slate layer)
+  - `Surface High (Popovers / Dropdowns / Tooltips)`: `#1E2638` (Elevated cockpit glass)
+  - `Surface Subtle Glass`: `rgba(22, 29, 46, 0.65)` layered with `backdrop-filter: blur(16px)`
+
+- **Accent Chromatics:**
+  - `Primary (Electric Neon Cyan)`: `#00F0FF` — Utilized for active terminal commands, verified agent nodes, primary execution CTA buttons, and real-time telemetry pulses.
+  - `Secondary (Ultraviolet Violet)`: `#7B61FF` — Marks neural architecture configurations, deep reasoning pipelines, and premium marketplace tier indicators.
+  - `Tertiary (Synthetic Mint / Pulse)`: `#10E896` — Denotes optimal consensus, live operational health, positive yield/compute metrics, and automated transactions.
+
+- **Borders & Micro-Separators:**
+  - Hairline glass stroke: `rgba(255, 255, 255, 0.08)` default.
+  - Active / Focus halo stroke: `rgba(0, 240, 255, 0.45)`.
+  - Nested container separator: `rgba(255, 255, 255, 0.04)`.
+
+## Typography
+
+The typographic hierarchy establishes clear structural discipline:
+- **Headlines (Plus Jakarta Sans):** Selected for its razor-sharp geometric posture, contemporary rounded apertures, and commanding editorial stance in enterprise dashboards.
+- **Body & Data Content (Inter):** Leverages micro-tuned kerning and exceptional x-height to maximize legibility across dense enterprise tables, agent runtime parameters, and continuous metric streams.
+- **Labels, Telemetry, and Code (JetBrains Mono):** Monospaced precision for agent hash identifiers, latency readings (e.g., `12.4ms`), token rates, JSON payloads, and model weights.
+
+All numbers in telemetry tables must apply tabular figures (`font-variant-numeric: tabular-nums`) to prevent layout jitter during live metric streaming.
+
+## Layout & Spacing
+
+The layout philosophy uses a disciplined **Fluid Grid System** tailored for variable viewport density:
+
+- **Desktop (>= 1280px):** 12-column adaptive grid, `margin-lg` (48px outer canvas padding), `gutter` (20px). Supports deep multi-pane arrangements (e.g., Left Agent Directory [3 col], Central Canvas/Playground [6 col], Right Telemetry Inspector [3 col]).
+- **Tablet (768px - 1279px):** 8-column grid with collapsible telemetry drawers, `margin` (32px), `gutter-sm` (12px).
+- **Mobile (< 768px):** 4-column flow with vertical stacking and full-width card wrappers, `margin-sm` (16px), `gutter-sm` (12px).
+
+Internal spacing strictly adheres to a 4px mathematical scale. Use tight micro-spacing (`space-xs` and `space-sm`) for terminal rows, chip clusters, and agent parameter pills to preserve high data density without feeling cluttered.
+
+## Elevation & Depth
+
+Visual hierarchy uses **Sub-surface Tonal Stacking** paired with **Directional Glass Luminescence**:
+
+- **Substrate Floor:** The lowest visual tier (#0A0D14) remains matte and non-reflective, anchoring the workspace.
+- **Tonal Tiers & Borders:** Depth is generated primarily through calibrated surface illumination and micro-borders rather than opaque drop shadows. Surfaces employ a 1px border with an inward linear gradient: `linear-gradient(180deg, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0.02) 100%)`.
+- **Atmospheric Glow Shadows:** Hover states, active modal layers, and executing agents trigger diffused colored halos:
+  - Default elevation: No shadow, relying solely on surface color contrast and 1px edge boundary.
+  - Floating Panels / Flyouts: `0 12px 32px -8px rgba(0, 0, 0, 0.75), 0 0 0 1px rgba(255, 255, 255, 0.08)`.
+  - Neon Accent Bloom: `0 0 24px -4px rgba(0, 240, 255, 0.18)` applied strictly when an agent is live, compiling, or selected.
+- **Glassmorphic Overlays:** Modal scrims and sticky floating heads implement `rgba(16, 21, 34, 0.72)` with a 20px blur filter and a 10% saturated background filter to retain background contrast.
+
+## Shapes
+
+This design system uses **Soft / Technical Roundedness (Level 1)**:
+- Standard components (buttons, input fields, badges, table cells) feature a base corner radius of `4px` (0.25rem).
+- Outer card shells and sub-containers use `8px` (0.5rem, `rounded-lg`).
+- Larger modal surfaces and marketplace showcase cards use `12px` (0.75rem, `rounded-xl`).
+- Status telemetry dots and select pill tags (e.g., agent protocol tags) leverage fully circular radii (`9999px`).
+
+This subtle radius enforces a clean, surgical, enterprise-grade finish that feels balanced and modern without slipping into playful consumer software aesthetics.
+
+## Components
+
+### Buttons & Interactive Controls
+- **Primary Execution Button:** Solid `#00F0FF` background with `#0A0D14` bold typography. On hover, radiates a subtle cyan glow (`0 0 16px rgba(0, 240, 255, 0.45)`) and shifts brightness upward.
+- **Secondary Glass Button:** Translucent surface (`rgba(255, 255, 255, 0.05)`), 1px border (`rgba(255, 255, 255, 0.12)`), text color `#FFFFFF`. On hover: border transitions to `rgba(123, 97, 255, 0.6)` with light purple tint fill.
+- **Destructive/Halt Button:** Deep crimson slate (`rgba(255, 69, 58, 0.12)`), border `rgba(255, 69, 58, 0.3)`, text `#FF453A`.
+
+### Status Badges & Chips
+- **Agent State Badges:** Pill-shaped (`rounded-full`), padded `2px 8px`, using monospaced `label-sm` typography. 
+  - *Active / Ready:* `#10E896` typography, `rgba(16, 232, 150, 0.1)` background, active pulsating 6px green LED indicator.
+  - *Deploying / Thinking:* `#00F0FF` typography, `rgba(0, 240, 255, 0.1)` background, rotating loader dot.
+  - *Deprecated / Suspended:* `#8A93A6` typography, `rgba(255, 255, 255, 0.06)` background.
+- **Filter & Architecture Chips:** Compact rectangular (`rounded`) badges with subtle hairline strokes. Active chips illuminate with an electric cyan border and a soft glow.
+
+### Cards & Marketplace Tiles
+- **Agent Marketplace Card:** Built on `#161D2E` with a hairline top-lit gradient border. Features an upper telemetry strip displaying agent latency, architecture type (e.g., `MoE / 32B`), and creator verification status.
+- Hovering smoothly scales the border illumination from 8% white to 40% cyan, shifting background elevation slightly higher.
+
+### Form Inputs & Terminal Controls
+- **Inputs:** Surface `#101522` with 1px border `rgba(255, 255, 255, 0.1)`. Inset padding `10px 14px`. Text `#FFFFFF`. Placeholder text `#4E5971`.
+- **Focus State:** 1px border `#00F0FF` accompanied by a micro-ring glow (`0 0 0 1px rgba(0, 240, 255, 0.3)`).
+- **Checkboxes & Radios:** Compact 16px geometric squares/circles with 1px borders. Checked state snaps with an animated `#00F0FF` fill and dark obsidian icon mark.
+
+### Data Tables & Stream Lists
+- Dense tabular display with 36px row heights for rapid scanning.
+- Alternating subtle row striping (`rgba(255, 255, 255, 0.015)`).
+- Sticky column headers in `label-md` uppercase JetBrains Mono, muted at `#6C7893`.
+- Hovering a row highlights it with a 1px left accent bar in `#7B61FF`.
